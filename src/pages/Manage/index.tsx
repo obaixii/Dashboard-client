@@ -160,9 +160,7 @@ export default function Manage() {
                                                             <DropdownMenuLabel>Actions</DropdownMenuLabel>
                                                             <DropdownMenuItem>Edit</DropdownMenuItem>
                                                             <AlertDialogBox
-                                                                title="Do you want to Delete this Product?"
-                                                                description=" This action cannot be undone. Any unsaved data will be lost."
-                                                                action="Delete" />
+                                                                action="delete" />
                                                         </DropdownMenuContent>
                                                     </DropdownMenu>
 
