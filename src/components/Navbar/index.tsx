@@ -4,7 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
 import { Link } from "react-router-dom"
 import ThemeToggle from "../Theme/ThemeToggle"
-import AlertDialogBox from "../Alert"
+import { AlertDialogBox } from "../index"
 
 export default function Navbar() {
     return (

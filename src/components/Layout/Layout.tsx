@@ -1,6 +1,5 @@
-import Sidebar from "./components/Sidebar"
-import PopSidebar from "./components/PopSidebar"
 import { Outlet } from "react-router-dom"
+import { Sidebar, PopSidebar } from "../index"
 
 export default function Layout() {
     return (
