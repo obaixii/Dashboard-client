@@ -1,5 +1,5 @@
 import { Layout } from "./components";
-import { Dashboard, Form, Manage, NotFound, Home, Test } from "./pages"
+import { Dashboard, Form, Manage, NotFound, Home, Test, AddProducts } from "./pages"
 import { Route, Routes, useLocation } from "react-router-dom"
 
 export default function App() {
@@ -18,6 +18,7 @@ export default function App() {
           <Route path="/test" element={<Test />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/manage" element={<Manage />} />
+          <Route path="/add-products" element={<AddProducts />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

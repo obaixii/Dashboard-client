@@ -39,6 +39,7 @@ import {
     TabsTrigger,
 } from "@/components/ui/tabs"
 import { AlertDialogBox } from "@/components"
+import { Link } from "react-router-dom"
 
 export default function Manage() {
     return (
@@ -49,11 +50,8 @@ export default function Manage() {
                         <div className="flex items-center">
                             <TabsList>
                                 <TabsTrigger value="all">All</TabsTrigger>
-                                <TabsTrigger value="active">Active</TabsTrigger>
-                                <TabsTrigger value="draft">Draft</TabsTrigger>
-                                <TabsTrigger value="archived" className="hidden sm:flex">
-                                    Archived
-                                </TabsTrigger>
+                                <TabsTrigger value="in-stock">In Stock</TabsTrigger>
+                                <TabsTrigger value="out-of-stock">Out of Stock</TabsTrigger>
                             </TabsList>
                             <div className="ml-auto flex items-center gap-2">
                                 <DropdownMenu>
@@ -81,9 +79,11 @@ export default function Manage() {
                                     <File className="h-3.5 w-3.5" />
                                     <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Export</span>
                                 </Button>
-                                <Button size="sm" className="h-8 gap-1">
-                                    <PlusCircle className="h-3.5 w-3.5" />
-                                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Add Product</span>
+                                <Button size="sm" className="h-8 gap-1" asChild>
+                                    <Link to="/add-products">
+                                        <PlusCircle className="h-3.5 w-3.5" />
+                                        <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">Add Product</span>
+                                    </Link>
                                 </Button>
                             </div>
                         </div>
