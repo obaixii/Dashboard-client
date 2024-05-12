@@ -5,7 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Link } from "react-router-dom"
 import { Dropdown } from "@/components"
 import ThemeToggle from "@/components/Theme/ThemeToggle"
-import { Links } from "@/utils/constants"
+import { DashboardLinks } from "@/utils/constants"
 
 export default function PopSidebar() {
     return (
@@ -31,7 +31,7 @@ export default function PopSidebar() {
                             <span className="">pop</span>
                         </Link>
                         {
-                            Links.map((link, index) =>
+                            DashboardLinks.map((link, index) =>
                                 <Link
                                     key={index}
                                     to={link.path}
@@ -73,7 +73,7 @@ export default function PopSidebar() {
         </form> */}
             </div>
             <ThemeToggle />
-            <Dropdown label="My Account" items={["Support", "Settings"]} />
+            <Dropdown action="avatar" label="My Account" items={["Support", "Settings"]} />
         </header>
     )
 }
