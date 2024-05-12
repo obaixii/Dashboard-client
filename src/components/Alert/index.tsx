@@ -2,12 +2,20 @@ import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, 
 import { Button } from "@/components/ui/button"
 
 type AlertDialogBoxType = {
-    title: string;
-    description: string;
-    action: string;
+    action: "logout" | "delete";
 }
-export default function AlertDialogBox({ title, description, action }: AlertDialogBoxType) {
-    console.log(title, description, action);
+export default function AlertDialogBox({ action }: AlertDialogBoxType) {
+    let title = "";
+    let description = "";
+
+    if (action === "logout") {
+        title = "Do you want to Logout?";
+        description = "This action cannot be undone. Any unsaved data will be lost.";
+        
+    } else if (action === "delete") {
+        title = "Do you want to Delete this Product?";
+        description = "This action cannot be undone. Any unsaved data will be lost.";
+    }
 
     return (
         <AlertDialog>

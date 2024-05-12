@@ -1,7 +1,11 @@
-export { default as Navbar } from "./Navbar";
+export { default as AlertDialogBox } from "./Alert/index";
+export { default as CardDemo } from "./Card/index";
+export { default as Dropdown } from "./Dropdown/index";
+export { default as Layout } from "./Layout/index";
 export { default as Login } from "./Form/Login";
+export { default as Navbar } from "./Navbar";
+export { default as PopSidebar } from "./PopSidebar";
+export { default as Sidebar } from "./Sidebar";
 export { default as SignUp } from "./Form/SignUp";
-export { default as AlertDialogBox } from "./Alert";
-export { default as Layout } from "./Layout/Layout";
-export { default as Sidebar } from "./Sidebar/index"
-export { default as PopSidebar } from "./PopSidebar/index"
+export { default as TableDemo } from "./Table/index";
+export { default as TabsDemo } from "./Tabs/index";

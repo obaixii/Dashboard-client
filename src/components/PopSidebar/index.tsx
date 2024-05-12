@@ -1,12 +1,11 @@
-import { CircleUser, Home, LineChart, Menu, Package, Package2, ShoppingCart, Users } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
+import { Menu, Package2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger, } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Link } from "react-router-dom"
-import { AlertDialogBox } from "@/components"
+import { Dropdown } from "@/components"
 import ThemeToggle from "@/components/Theme/ThemeToggle"
+import { DashboardLinks } from "@/utils/constants"
 
 export default function PopSidebar() {
     return (
@@ -31,44 +30,17 @@ export default function PopSidebar() {
                             <Package2 className="h-6 w-6" />
                             <span className="">pop</span>
                         </Link>
-                        <Link
-                            to="/dashboard"
-                            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                        >
-                            <Home className="h-5 w-5" />
-                            Dashboard
-                        </Link>
-                        <Link
-                            to="/orders"
-                            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                        >
-                            <ShoppingCart className="h-5 w-5" />
-                            Orders
-                            <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                                6
-                            </Badge>
-                        </Link>
-                        <Link
-                            to="#"
-                            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                        >
-                            <Package className="h-5 w-5" />
-                            Products
-                        </Link>
-                        <Link
-                            to="#"
-                            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                        >
-                            <Users className="h-5 w-5" />
-                            Customers
-                        </Link>
-                        <Link
-                            to="#"
-                            className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                        >
-                            <LineChart className="h-5 w-5" />
-                            Analytics
-                        </Link>
+                        {
+                            DashboardLinks.map((link, index) =>
+                                <Link
+                                    key={index}
+                                    to={link.path}
+                                    className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                                >
+                                    {link.icon}
+                                    {link.title}
+                                </Link>)
+                        }
                     </nav>
                     <div className="mt-auto">
                         <Card>
@@ -101,25 +73,7 @@ export default function PopSidebar() {
         </form> */}
             </div>
             <ThemeToggle />
-            <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                    <Button variant="secondary" size="icon" className="rounded-full">
-                        <CircleUser className="h-5 w-5" />
-                        <span className="sr-only">Toggle user menu</span>
-                    </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Settings</DropdownMenuItem>
-                    <DropdownMenuItem>Support</DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <AlertDialogBox
-                        title="Do you want to Logout?"
-                        description=" This action cannot be undone. Any unsaved data will be lost."
-                        action="Logout" />
-                </DropdownMenuContent>
-            </DropdownMenu>
+            <Dropdown action="avatar" label="My Account" items={["Support", "Settings"]} />
         </header>
     )
 }
