@@ -2,7 +2,7 @@ import { Bell, Package2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, } from "@/components/ui/card"
 import { Link, useLocation } from "react-router-dom"
-import { Links } from "@/utils/constants"
+import { DashboardLinks } from "@/utils/constants"
 
 
 export default function Sidebar() {
@@ -25,7 +25,7 @@ export default function Sidebar() {
                 <div className="flex-1">
                     <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
                         {
-                            Links.map((link, index) =>
+                            DashboardLinks.map((link, index) =>
                                 <Link
                                     key={index}
                                     to={link.path}

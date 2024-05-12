@@ -1,11 +1,11 @@
-import { Home, LineChart, Package, ShoppingCart, User } from "lucide-react"
+import { Eye, Home, LineChart, Package, PencilRuler, Pickaxe, ShieldCheck, ShoppingCart, User, UserRound } from "lucide-react"
 
 type Link = {
     title: string,
     path: string,
     icon: React.ReactNode
 }
-export const Links: Link[] = [
+export const DashboardLinks: Link[] = [
     {
         title: "Dashboard",
         path: "dashboard",
@@ -30,6 +30,35 @@ export const Links: Link[] = [
         title: "Analytics",
         path: "#",
         icon: <LineChart className="h-4 w-4" />
+    },
+
+]
+
+export const SettingLinks: Link[] = [
+    {
+        title: "Profile",
+        path: "/settings/profile",
+        icon: <UserRound className="h-4 w-4" />
+    },
+    {
+        title: "Account",
+        path: "/settings/account",
+        icon: <ShieldCheck className="h-4 w-4" />
+    },
+    {
+        title: "Appearance",
+        path: "/settings/appearance",
+        icon: <PencilRuler className="h-4 w-4" />
+    },
+    {
+        title: "Display",
+        path: "/settings/display",
+        icon: <Eye className="h-4 w-4" />
+    },
+    {
+        title: "Advanced",
+        path: "/settings/advance",
+        icon: <Pickaxe className="h-4 w-4" />
     },
 
 ]
